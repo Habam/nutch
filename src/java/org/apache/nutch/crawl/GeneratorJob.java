@@ -167,6 +167,8 @@ public class GeneratorJob extends NutchTool implements Tool {
     String batchId = (String) args.get(Nutch.ARG_BATCH);
     if (batchId != null) {
       getConf().set(GeneratorJob.BATCH_ID, batchId);
+    } else if(BATCH_ID != null) {
+      // my already generated BATCH_ID from args
     } else {
       // generate batchId
       long curTime = System.currentTimeMillis();
